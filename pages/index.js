@@ -1,5 +1,6 @@
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -11,10 +12,44 @@ export default function Home() {
       </Head>
 
       <main>
-        <div></div>
+        <div>sadfgfderweagsdfhgegsfd</div>
       </main>
 
-      <footer></footer>
+      <footer className="footer-container">
+        <div>
+          <Link href="/">@2022 OnlyMyFans</Link>
+          <Link href="/">Contact</Link>
+          <Link href="/">How it works</Link>
+          <Link href="/">Complaints Policy</Link>
+        </div>
+        <div>
+          <Link href="/">About</Link>
+          <Link href="/">Terms of Service</Link>
+          <Link href="/">Referrals</Link>
+          <Link href="/">Cookie Notice</Link>
+        </div>
+
+        <div>
+          <Link href="/">Help</Link>
+          <Link href="/">Store</Link>
+          <Link href="/">How it works</Link>
+          <Link href="/">Complaints Policy</Link>
+        </div>
+
+        <div>
+          <Link href="/">Blog</Link>
+          <Link href="/">DMCA</Link>
+          <Link href="/">USC 2257</Link>
+          <Link href="/">Standard Contract Between Fan and Creator</Link>
+        </div>
+
+        <div>
+          <Link href="/">Branding</Link>
+          <Link href="/">Privacy</Link>
+          <Link href="/">Acceptable Use Policy</Link>
+          <Link href="/">Statement</Link>
+        </div>
+      </footer>
     </div>
   );
 }

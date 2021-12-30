@@ -18,3 +18,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+:root {
+  --footer-background: #212a2f;
+}
