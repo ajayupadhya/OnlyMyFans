@@ -21,4 +21,30 @@ a {
 
 :root {
   --footer-background: #212a2f;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--footer-background);
+  padding: 72px 0px;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-container > div {
+  display: flex;
+  flex-direction: column;
+  padding-left: 60px;
+}
+
+.footer-container > div > a {
+  color: white;
+  letter-spacing: 2px;
+  padding: 10px;
+  font-size: 12px;
 }
