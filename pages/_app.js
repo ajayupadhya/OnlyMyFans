@@ -1,4 +1,6 @@
 import "../styles/globals.css";
+import "../styles/Login.css";
+
 import Provider from "react-redux";
 // import { useStore } from "../src/Redux/Store/Store";
 

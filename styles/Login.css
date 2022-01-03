@@ -1,0 +1,126 @@
+.login__container {
+  margin: 100px 0px 0px 20%;
+  display: flex;
+  padding: 20px;
+  flex-direction: column;
+  max-width: 400px;
+  min-width: 300px;
+}
+
+.login__container > h4 {
+  color: var(--footer-background);
+}
+
+.login__container__button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 1000px;
+  padding: 9px 16px;
+  color: white;
+  background-color: var(--primary-color);
+  margin: 50px 0px 10px 0px;
+}
+
+.login__container__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  color: #009dff;
+  margin: 50px 0px 10px 0px;
+}
+
+.login__container__link > a:hover {
+  color: var(--primary-color);
+}
+
+.login__container__twitter,
+.login__container__google {
+  border: none;
+  font-size: 14px;
+  font-weight: 500;
+  min-width: 78px;
+  transition: opacity 0.15s ease, background-color 0.15s ease,
+    box-shadow 0.15s ease;
+  white-space: nowrap;
+  text-align: center;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+
+  border-radius: 1000px;
+  min-height: 48px;
+  padding: 9px 16px;
+  background-color: #009dff;
+  color: white;
+  margin: 20px 0px 00px 0px;
+  width: 100%;
+}
+
+.login__container__twitter:hover,
+.login__container__google:hover {
+  background: #007aff;
+}
+
+.login__container__twitter > span,
+.login__container__google > span {
+  flex: 1;
+}
+
+.form__field {
+  position: relative;
+  padding: 15px 0 0;
+  margin-top: 10px;
+  width: 100%;
+}
+
+.login__container__input__field {
+  font-family: inherit;
+  width: 100%;
+  border: 0;
+  border: 0.5px solid rgba(0, 0, 0, 0.3);
+  border-radius: 7px;
+  outline: 0;
+  font-size: 1.3rem;
+  color: white;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+}
+
+.login__container__input__field::placeholder {
+  color: transparent;
+}
+.form__label {
+  position: absolute;
+  top: 30px;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: var(--footer-background);
+  margin-left: 14px;
+  opacity: 0.5;
+}
+
+.login__container__input__field:focus ~ .form__label {
+  position: absolute;
+  top: 2px;
+  display: block;
+  transition: 0.2s;
+  font-size: 1rem;
+  color: var(--primary-color);
+  font-weight: 700;
+  opacity: 1;
+  background: white;
+  width: 50px;
+  text-align: center;
+}
+
+.login__container__input__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 0.5px;
+  border-color: var(--primary-color);
+  border-image-slice: 1;
+}

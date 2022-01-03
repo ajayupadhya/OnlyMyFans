@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
-
+import Login from "../src/User/signin_and_up/Login";
 export default function Home() {
   return (
     <div>
@@ -19,7 +19,9 @@ export default function Home() {
 
       <main className="container mx-auto flex flex-row max-w-full">
         <div className="w-1/2 h-screen bg-primary">{/* adsfghfg */}</div>
-        <div className="w-1/2 h-screen">{/* sadfg */}</div>
+        <div className="w-1/2 h-screen">
+          <Login />
+        </div>
         <div></div>
       </main>
 
