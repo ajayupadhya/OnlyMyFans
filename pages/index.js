@@ -1,8 +1,11 @@
+import React, { useState } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
 import Login from "../src/User/signin_and_up/Login";
+import Base from "../src/Base/Base";
 export default function Home() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div>
       <Head>
@@ -16,50 +19,55 @@ export default function Home() {
           rel="stylesheet"
         ></link>
       </Head>
+      {isLoggedIn ? (
+        <Base />
+      ) : (
+        <>
+          {" "}
+          <main className="container mx-auto flex flex-row max-w-full">
+            <div className="w-1/2 h-screen bg-primary">{/* adsfghfg */}</div>
+            <div className="w-1/2 h-screen">
+              <Login />
+            </div>
+            <div></div>
+          </main>
+          <footer className="footer-container">
+            <div>
+              <Link href="/">@2022 OnlyMyFans</Link>
+              <Link href="/">Contact</Link>
+              <Link href="/">How it works</Link>
+              <Link href="/">Complaints Policy</Link>
+            </div>
+            <div>
+              <Link href="/">About</Link>
+              <Link href="/">Terms of Service</Link>
+              <Link href="/">Referrals</Link>
+              <Link href="/">Cookie Notice</Link>
+            </div>
 
-      <main className="container mx-auto flex flex-row max-w-full">
-        <div className="w-1/2 h-screen bg-primary">{/* adsfghfg */}</div>
-        <div className="w-1/2 h-screen">
-          <Login />
-        </div>
-        <div></div>
-      </main>
+            <div>
+              <Link href="/">Help</Link>
+              <Link href="/">Store</Link>
+              <Link href="/">How it works</Link>
+              <Link href="/">Complaints Policy</Link>
+            </div>
 
-      <footer className="footer-container">
-        <div>
-          <Link href="/">@2022 OnlyMyFans</Link>
-          <Link href="/">Contact</Link>
-          <Link href="/">How it works</Link>
-          <Link href="/">Complaints Policy</Link>
-        </div>
-        <div>
-          <Link href="/">About</Link>
-          <Link href="/">Terms of Service</Link>
-          <Link href="/">Referrals</Link>
-          <Link href="/">Cookie Notice</Link>
-        </div>
+            <div>
+              <Link href="/">Blog</Link>
+              <Link href="/">DMCA</Link>
+              <Link href="/">USC 2257</Link>
+              <Link href="/">Standard Contract Between Fan and Creator</Link>
+            </div>
 
-        <div>
-          <Link href="/">Help</Link>
-          <Link href="/">Store</Link>
-          <Link href="/">How it works</Link>
-          <Link href="/">Complaints Policy</Link>
-        </div>
-
-        <div>
-          <Link href="/">Blog</Link>
-          <Link href="/">DMCA</Link>
-          <Link href="/">USC 2257</Link>
-          <Link href="/">Standard Contract Between Fan and Creator</Link>
-        </div>
-
-        <div>
-          <Link href="/">Branding</Link>
-          <Link href="/">Privacy</Link>
-          <Link href="/">Acceptable Use Policy</Link>
-          <Link href="/">Statement</Link>
-        </div>
-      </footer>
+            <div>
+              <Link href="/">Branding</Link>
+              <Link href="/">Privacy</Link>
+              <Link href="/">Acceptable Use Policy</Link>
+              <Link href="/">Statement</Link>
+            </div>
+          </footer>
+        </>
+      )}
     </div>
   );
 }

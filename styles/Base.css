@@ -1,0 +1,111 @@
+.only__myFans__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+
+.only__myFans__container__left {
+  width: 20%;
+  position: fixed;
+  left: 14%;
+  top: 25px;
+  display: flex;
+  flex-direction: column;
+  padding-left: 50px;
+  justify-content: space-around;
+}
+.only__myFans__container__middle {
+  width: 32%;
+  border-left: 0.5px solid black;
+  border-right: 0.5px solid black;
+  position: relative;
+}
+
+.only__myFans__container__right {
+  width: 20%;
+  border: 2px solid black;
+  position: fixed;
+  right: 14%;
+  top: 30px;
+}
+
+/* left side */
+
+.avatarName {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  background-color: #8a96a3;
+  align-self: flex-start;
+}
+.avatarName > p {
+  color: var(--primary-color);
+  font-size: var(--font-size);
+}
+
+.icons__style {
+  display: flex;
+  align-items: center;
+  margin: 20px 0px 0px 0px;
+  opacity: 0.5;
+  width: 210px;
+  justify-content: space-between;
+  height: 48px;
+  border-radius: 13px;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+.icons__style:hover {
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  opacity: 1;
+}
+.icons__style > span {
+  flex: 1;
+  font-size: var(--font-size);
+  margin-left: 21px;
+}
+
+.btn__newPost__primary__color {
+  display: flex;
+  align-items: center;
+  height: 48px;
+  width: 220px;
+  border-radius: 1000px;
+  padding: 9px 16px;
+  margin-top: 30px;
+  background-color: var(--primary-color);
+  color: white;
+  cursor: pointer;
+
+  font-weight: 500;
+
+  min-width: 78px;
+  transition: opacity 0.15s ease, background-color 0.15s ease,
+    box-shadow 0.15s ease;
+
+  white-space: nowrap;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.btn__newPost__primary__color:hover {
+  background-color: #c38e00;
+}
+
+.btn__newPost__primary__color > span {
+  flex: 1;
+  font-size: var(--font-size);
+  text-align: center;
+}
+
+/* middle part  */

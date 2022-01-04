@@ -21,7 +21,10 @@ a {
 
 :root {
   --footer-background: #212a2f;
-  --primary-color: #ffc629;
+  --primary-color: #f6b400;
+  --font-size: 19px;
+  --secondary-color: #f4f6f8;
+  --text-color: #1c1d20;
   font-family: "Source Sans Pro", sans-serif;
 }
 
