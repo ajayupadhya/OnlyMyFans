@@ -1,0 +1,87 @@
+.post__onlyMyFans__container {
+  padding: 10px 25px;
+  margin: 0;
+  color: #242529;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.post__onlyMyFans__header {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+}
+
+.post__onlyMyFans__header__avatar {
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  overflow: hidden;
+}
+
+.post__onlyMyFans__header__userName {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  padding-left: 10px;
+  width: 200px;
+  flex: 1;
+}
+
+.post__onlyMyFans__header__userName > span {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.post__onlyMyFans__header__userName > span > a {
+  padding-right: 6px;
+}
+
+.post__onlyMyFans__header__timing {
+  display: flex;
+  align-items: center;
+
+  width: 150px;
+
+  justify-content: space-evenly;
+}
+
+.post__onlyMyFans__post {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px 0px 20px 0px;
+}
+
+.post__onlyMyFans__video {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 109%;
+}
+
+.post__onlyMyFans__like__section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.post__onlyMyFans__like__section > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100px;
+}
+.post__onlyMyFans__like__likes_count {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 10px;
+  width: 100%;
+}

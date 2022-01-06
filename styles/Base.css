@@ -22,6 +22,7 @@
   border-left: 0.5px solid black;
   border-right: 0.5px solid black;
   position: relative;
+  max-width: 600px;
 }
 
 .only__myFans__container__right {
@@ -43,7 +44,7 @@
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  background-color: #8a96a3;
+  background-color: #f1f5f8;
   align-self: flex-start;
 }
 .avatarName > p {
@@ -83,7 +84,7 @@
   border-radius: 1000px;
   padding: 9px 16px;
   margin-top: 30px;
-  background-color: var(--primary-color);
+  background-color: #ecbb35;
   color: white;
   cursor: pointer;
 
@@ -99,7 +100,7 @@
 }
 
 .btn__newPost__primary__color:hover {
-  background-color: #c38e00;
+  background-color: var(--primary-color);
 }
 
 .btn__newPost__primary__color > span {
