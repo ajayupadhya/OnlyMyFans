@@ -19,10 +19,26 @@ a {
   box-sizing: border-box;
 }
 
+html {
+  font-size: 62.5%;
+}
+
+@media (max-width: 998rem) {
+  html {
+    font-size: 55%;
+  }
+}
+
+@media (max-width: 768rem) {
+  html {
+    font-size: 45%;
+  }
+}
+
 :root {
   --footer-background: #212a2f;
   --primary-color: #f6b400;
-  --font-size: 19px;
+  --font-size: 1.9rem;
   --secondary-color: #f4f6f8;
   --text-color: #1c1d20;
   font-family: "Source Sans Pro", sans-serif;
@@ -35,7 +51,7 @@ a {
   left: 0;
   right: 0;
   background-color: var(--footer-background);
-  padding: 22px 0px;
+  padding: 2.2rem 0rem;
   align-items: center;
   justify-content: center;
 }
@@ -43,12 +59,12 @@ a {
 .footer-container > div {
   display: flex;
   flex-direction: column;
-  padding-left: 60px;
+  padding-left: 6rem;
 }
 
 .footer-container > div > a {
   color: white;
-  letter-spacing: 2px;
-  padding: 10px;
-  font-size: 12px;
+  letter-spacing: 0.2rem;
+  padding: 1rem;
+  font-size: 1.2rem;
 }
