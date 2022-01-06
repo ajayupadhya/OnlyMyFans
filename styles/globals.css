@@ -28,27 +28,54 @@ a {
   font-family: "Source Sans Pro", sans-serif;
 }
 
-.footer-container {
-  display: flex;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: var(--footer-background);
-  padding: 22px 0px;
-  align-items: center;
-  justify-content: center;
+@media screen and (min-width: 768px) {
+  .footer-container {
+    display: flex;
+
+    background-color: var(--footer-background);
+    padding: 22px 0px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-container > div {
+    display: flex;
+    flex-direction: column;
+    padding-left: 60px;
+  }
+
+  .footer-container > div > a {
+    color: white;
+    letter-spacing: 2px;
+    padding: 10px;
+    font-size: 12px;
+  }
 }
 
-.footer-container > div {
-  display: flex;
-  flex-direction: column;
-  padding-left: 60px;
-}
+/* On screens that are 600px or less, set the background color to olive */
+@media screen and (max-width: 768px) {
+  .footer-container {
+    display: grid;
+    grid-template-columns: 1fr  repeat(2, 1fr);
 
-.footer-container > div > a {
-  color: white;
-  letter-spacing: 2px;
-  padding: 10px;
-  font-size: 12px;
+    background-color: var(--footer-background);
+    padding: 22px 0px;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+    width: 100%;
+  }
+
+  .footer-container > div {
+    display: flex;
+    flex-direction: column;
+    padding-left: 60px;
+  }
+
+  .footer-container > div > a {
+    color: white;
+    letter-spacing: 2px;
+    padding: 10px;
+    font-size: 12px;
+  }
 }

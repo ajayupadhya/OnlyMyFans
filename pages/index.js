@@ -5,7 +5,7 @@ import Link from "next/link";
 import Login from "../src/User/signin_and_up/Login";
 import Base from "../src/Base/Base";
 export default function Home() {
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div>
       <Head>
