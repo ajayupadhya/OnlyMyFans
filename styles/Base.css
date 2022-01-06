@@ -10,35 +10,38 @@
 .only__myFans__container__left {
   width: 20%;
   position: fixed;
-  left: 14%;
-  top: 25px;
+  left: 10%;
+  top: 2.5rem;
   display: flex;
   flex-direction: column;
-  padding-left: 50px;
+  padding-left: 5rem;
   justify-content: space-around;
 }
 .only__myFans__container__middle {
-  width: 32%;
-  border-left: 0.5px solid black;
-  border-right: 0.5px solid black;
+  width: 48%;
+  border-left: 0.1rem solid rgba(138, 150, 163, 0.25);
+  border-right: 0.1rem solid rgba(138, 150, 163, 0.25);
+
   position: relative;
-  max-width: 600px;
+  max-width: 80rem;
 }
 
 .only__myFans__container__right {
   width: 20%;
-  border: 2px solid black;
+  border: 0.1rem solid rgba(138, 150, 163, 0.25);
   position: fixed;
-  right: 14%;
-  top: 30px;
+  right: 10%;
+  top: 3rem;
+  height: 5rem;
+  /* border: ; */
 }
 
 /* left side */
 
 .avatarName {
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
+  width: 3.6rem;
+  height: 3.6rem;
   text-align: center;
   display: flex;
   align-items: center;
@@ -55,13 +58,13 @@
 .icons__style {
   display: flex;
   align-items: center;
-  margin: 20px 0px 0px 0px;
+  margin: 2rem 0rem 0rem 0rem;
   opacity: 0.5;
-  width: 210px;
+  width: 21rem;
   justify-content: space-between;
-  height: 48px;
-  border-radius: 13px;
-  padding-left: 5px;
+  height: 4.8rem;
+  border-radius: 1.3rem;
+  padding-left: 0.5rem;
   cursor: pointer;
 }
 
@@ -72,25 +75,27 @@
 }
 .icons__style > span {
   flex: 1;
-  font-size: var(--font-size);
-  margin-left: 21px;
+  font-size: 2.7rem;
+  font-weight: 600;
+  margin-left: 2.1rem;
+  /* border: 1px solid red; */
 }
 
 .btn__newPost__primary__color {
   display: flex;
   align-items: center;
-  height: 48px;
-  width: 220px;
-  border-radius: 1000px;
-  padding: 9px 16px;
-  margin-top: 30px;
+  height: 4.8rem;
+  width: 22rem;
+  border-radius: 100rem;
+  padding: 0.9rem 1.6rem;
+  margin-top: 3rem;
   background-color: #ecbb35;
   color: white;
   cursor: pointer;
 
   font-weight: 500;
 
-  min-width: 78px;
+  min-width: 7.8rem;
   transition: opacity 0.15s ease, background-color 0.15s ease,
     box-shadow 0.15s ease;
 
