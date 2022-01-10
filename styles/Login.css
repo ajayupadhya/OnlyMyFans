@@ -1,5 +1,5 @@
 .login__container {
-  margin: 5rem 0rem 0rem 8rem;
+  margin: 5rem 0rem 0rem 0.8rem;
   display: flex;
   padding: 2rem;
   flex-direction: column;
@@ -168,7 +168,7 @@
 }
 
 .login__container_privacy__content_login {
-  font-size: 14rem;
+  font-size: 1.4rem;
   color: #242529;
   margin-top: 1rem;
 }
