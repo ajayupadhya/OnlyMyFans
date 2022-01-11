@@ -8,6 +8,9 @@ module.exports = {
       colors: {
         primary: "#ffc629",
       },
+      boxShadow: {
+        tag: "5px 10px black",
+      },
     },
   },
   plugins: [],
