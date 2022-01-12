@@ -7,7 +7,7 @@ import Base from "../src/Base/Base";
 import Blob from "../public/blob.svg";
 import { GiFluffyWing } from "react-icons/gi";
 export default function Home() {
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
   return (
     <div>
       <Head>

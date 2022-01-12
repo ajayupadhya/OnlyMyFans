@@ -46,7 +46,7 @@ const Left = () => {
         <span>More</span>
       </div>
       <div className="btn__newPost__primary__color">
-        <AiOutlinePlus size={size} />
+        <AiOutlinePlus size={25} />
         <span>New Post</span>
       </div>
     </div>
