@@ -1,21 +1,24 @@
 .only__myFans__container {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
   width: 100%;
   position: relative;
   height: 100%;
 }
 
 .only__myFans__container__left {
-  width: 20%;
-  position: fixed;
-  left: 10%;
+  width: auto;
+  position: sticky;
+  left: 5%;
   top: 2.5rem;
+  margin: 0 2rem 0 0;
   display: flex;
   flex-direction: column;
   padding-left: 5rem;
   justify-content: space-around;
+  /* border: 2px solid red; */
 }
 .only__myFans__container__middle {
   width: 48%;
@@ -27,13 +30,13 @@
 }
 
 .only__myFans__container__right {
-  width: 20%;
   border: 0.1rem solid rgba(138, 150, 163, 0.25);
-  position: fixed;
-  right: 10%;
+  position: sticky;
+  right: 5%;
   top: 3rem;
   height: 5rem;
-  /* border: ; */
+  width: auto;
+  max-width: 36.8rem;
 }
 
 /* left side */
@@ -58,7 +61,7 @@
 .icons__style {
   display: flex;
   align-items: center;
-  margin: 2rem 0rem 0rem 0rem;
+  margin: 1.8rem 0rem 0rem 0rem;
   opacity: 0.5;
   width: 21rem;
   justify-content: space-between;
@@ -75,8 +78,8 @@
 }
 .icons__style > span {
   flex: 1;
-  font-size: 2.7rem;
-  font-weight: 600;
+  font-size: 1.9rem;
+  font-weight: 500;
   margin-left: 2.1rem;
   /* border: 1px solid red; */
 }
@@ -112,6 +115,7 @@
   flex: 1;
   font-size: var(--font-size);
   text-align: center;
+  font-size: 1.4rem;
 }
 
 /* middle part  */

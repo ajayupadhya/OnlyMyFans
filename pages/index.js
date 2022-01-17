@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Login from "../src/User/signin_and_up/Login";
 import Base from "../src/Base/Base";
+import Blob from "../public/blob.svg";
+import { GiFluffyWing } from "react-icons/gi";
 export default function Home() {
   const [isLoggedIn, setIsLoggedIn] = useState(true);
   return (
@@ -25,8 +27,42 @@ export default function Home() {
         <>
           {" "}
           <main className="container mx-auto flex flex-row max-w-full">
-            <div className="w-1/2 h-screen bg-primary">{/* adsfghfg */}</div>
-            <div className="w-1/2 h-screen">
+            <div className="w-1/2 h-[70rem] bg-primary flex justify-center items-center">
+              <div class="h-3/6 flex-col justify-between  ">
+                <h1
+                  style={{
+                    boxShadow: "6px 12px rgba(0,0,0)",
+                  }}
+                  className="text-7xl font-bold tracking-wide border-4 border-black p-9 "
+                >
+                  OnlyMyFans
+                </h1>
+                <p
+                  style={{
+                    margin: "4rem 0",
+                    fontSize: "2rem",
+                    textAlign: "center",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    fontStyle: "italic",
+                  }}
+                >
+                  <GiFluffyWing size={25} style={{ margin: "0 1rem" }} />
+                  Give wiiings to your content..
+                  {/* <GiFluffyWing size={25} /> */}
+                </p>
+              </div>
+              {/* <div classname="border-x-2">
+                <Image
+                  src={Blob}
+                  height={500}
+                  width={1000}
+                  layout="responsive"
+                />
+              </div> */}
+            </div>
+            <div className="w-1/2 h-[70rem]">
               <Login />
             </div>
             <div></div>

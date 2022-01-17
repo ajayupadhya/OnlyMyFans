@@ -9,6 +9,8 @@
 
 .login__container > h4 {
   color: var(--footer-background);
+  font-size: 1.5rem;
+  font-weight: 600;
 }
 
 .login__container__button {
@@ -20,6 +22,12 @@
   color: white;
   background-color: #eebb2e;
   margin: 3rem 0rem 1rem 0rem;
+  width: 90%;
+  height: 4.5rem;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: 1.4rem;
 }
 
 .login__container__button:hover {
@@ -64,7 +72,7 @@
   background-color: #009dff;
   color: white;
   margin: 2rem 0rem 00rem 0rem;
-  width: 100%;
+  width: 90%;
 }
 
 .login__container__twitter:hover,
@@ -80,15 +88,15 @@
 .form__field {
   position: relative;
   padding: 1.5rem 0 0;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
   width: 100%;
 }
 
 .login__container__input__field {
   font-family: inherit;
-  width: 100%;
-
-  border: 0.5rem solid rgba(0, 0, 0, 0.3);
+  width: 90%;
+  height: 4rem;
+  border: 0.1rem solid rgba(0, 0, 0, 0.3);
   border-radius: 0.7rem;
   outline: 0;
   font-size: 1rem;
@@ -134,7 +142,7 @@
 .login__container__input__field:focus {
   padding-bottom: 0.6rem;
   font-weight: 500;
-  border-width: 0.5rem;
+  border-width: 0.1rem;
   border-color: var(--primary-color);
   border-image-slice: 1;
 }
@@ -168,7 +176,7 @@
 }
 
 .login__container_privacy__content_login {
-  font-size: 14rem;
+  font-size: 1.4rem;
   color: #242529;
   margin-top: 1rem;
 }
