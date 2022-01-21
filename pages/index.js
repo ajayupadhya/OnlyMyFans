@@ -26,9 +26,9 @@ export default function Home() {
       ) : (
         <>
           {" "}
-          <main className="container mx-auto flex flex-row max-w-full">
-            <div className="w-1/2 h-[70rem] bg-primary flex justify-center items-center">
-              <div class="h-3/6 flex-col justify-between  ">
+          <main className="container mx-auto flex flex-row max-w-full h-[80vh]">
+            <div className="w-1/2 h-[80vh] bg-primary flex justify-center items-center">
+              <div className="h-3/6 flex-col justify-between  ">
                 <h1
                   style={{
                     boxShadow: "6px 12px rgba(0,0,0)",

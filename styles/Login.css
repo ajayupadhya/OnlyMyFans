@@ -111,10 +111,10 @@
 }
 .form__label {
   position: absolute;
-  top: 2.2rem;
+  top: 2.5rem;
   display: block;
   transition: 0.2s;
-  font-size: 0.1rem;
+  font-size: 1.3rem;
   color: var(--footer-background);
   margin-left: 1.4rem;
   padding: 0rem 0.5rem 0rem 0.5rem;
@@ -128,7 +128,7 @@
   top: 0.4rem;
   display: block;
   transition: 0.2s;
-  font-size: 0.8rem;
+  font-size: 1.3rem;
   color: var(--primary-color);
   font-weight: 500;
   opacity: 1;
