@@ -8,7 +8,9 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "mongoose": "^6.0.11",
     "next": "12.0.7",
+    "next-auth": "^4.1.2",
     "next-redux-wrapper": "^7.0.5",
     "react": "17.0.2",
     "react-dom": "17.0.2",
@@ -17,7 +19,8 @@
     "react-redux": "^7.2.6",
     "redux": "^4.1.2",
     "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.4.1"
+    "redux-thunk": "^2.4.1",
+    "swr": "^1.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.0",

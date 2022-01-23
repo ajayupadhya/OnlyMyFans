@@ -14,7 +14,7 @@ const Login = ({ pageStatus = "login" }) => {
             placeholder="Name"
             required
           />
-          <label for="name" class="form__label">
+          <label htmlFor="email" className="form__label">
             Email
           </label>
         </div>
@@ -24,7 +24,7 @@ const Login = ({ pageStatus = "login" }) => {
             className="login__container__input__field"
             placeholder="Password"
           />
-          <label for="name" class="form__label">
+          <label htmlFor="password" className="form__label">
             Password
           </label>
         </div>
@@ -34,7 +34,7 @@ const Login = ({ pageStatus = "login" }) => {
               className="login__container__input__field"
               placeholder="Password"
             />
-            <label for="name" class="form__label">
+            <label htmlFor="name" className="form__label">
               Name
             </label>
           </div>

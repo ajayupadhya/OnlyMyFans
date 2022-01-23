@@ -6,7 +6,12 @@ import Login from "../src/User/signin_and_up/Login";
 import Base from "../src/Base/Base";
 import Blob from "../public/blob.svg";
 import { GiFluffyWing } from "react-icons/gi";
-export default function Home() {
+
+import dbConnect from "../lib/dbConnect";
+import Pet from "../models/Pet";
+
+export default function Home({ pets }) {
+  console.log(pets);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div>
@@ -106,4 +111,19 @@ export default function Home() {
       )}
     </div>
   );
+}
+
+/* Retrieves pet(s) data from mongodb database */
+export async function getServerSideProps() {
+  await dbConnect();
+
+  /* find all the data in our database */
+  const result = await Pet.find({});
+  const pets = result.map((doc) => {
+    const pet = doc.toObject();
+    pet._id = pet._id.toString();
+    return pet;
+  });
+
+  return { props: { pets: pets } };
 }
