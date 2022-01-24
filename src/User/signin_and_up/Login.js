@@ -2,8 +2,47 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { FaTwitter } from "react-icons/fa";
 import { AiOutlineGoogle } from "react-icons/ai";
+
+import dbConnect from "../../../lib/dbConnect";
 const Login = ({ pageStatus = "login" }) => {
   const [heading, setHeading] = useState("Sign Up");
+
+  const [data, setData] = useState({
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const { name, email, password } = data;
+
+  const handelChange = (e) => {
+    setData({ ...data, [e.target.name]: e.target.value });
+  };
+
+  const signUp = () => {
+    fetch("http://localhost:3000/api/user", {
+      method: "POST", // *GET, POST, PUT, DELETE, etc.
+      mode: "cors", // no-cors, *cors, same-origin
+      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+      headers: {
+        "Content-Type": "application/json",
+        // 'Content-Type': 'application/x-www-form-urlencoded',
+      },
+      redirect: "follow", // manual, *follow, error
+      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
+      body: JSON.stringify(data), // body data type must match "Content-Type" header
+    })
+      .then((res) => res.json())
+      .then((res) => {
+        localStorage.setItem("authorization", res.token);
+
+        setData({
+          name: "",
+          email: "",
+          password: "",
+        });
+      });
+  };
   return (
     <div className="login__container">
       <h4>{heading}</h4>
@@ -11,8 +50,11 @@ const Login = ({ pageStatus = "login" }) => {
         <div className="form__field">
           <input
             className="login__container__input__field"
-            placeholder="Name"
+            placeholder="Email"
             required
+            name="email"
+            value={email}
+            onChange={(e) => handelChange(e)}
           />
           <label htmlFor="email" className="form__label">
             Email
@@ -23,6 +65,10 @@ const Login = ({ pageStatus = "login" }) => {
           <input
             className="login__container__input__field"
             placeholder="Password"
+            name="password"
+            required
+            value={password}
+            onChange={(e) => handelChange(e)}
           />
           <label htmlFor="password" className="form__label">
             Password
@@ -32,7 +78,11 @@ const Login = ({ pageStatus = "login" }) => {
           <div className="form__field">
             <input
               className="login__container__input__field"
-              placeholder="Password"
+              placeholder="Name"
+              required
+              name="name"
+              value={name}
+              onChange={(e) => handelChange(e)}
             />
             <label htmlFor="name" className="form__label">
               Name
@@ -40,7 +90,9 @@ const Login = ({ pageStatus = "login" }) => {
           </div>
         ) : null}
       </div>
-      <button className="login__container__button">{heading}</button>
+      <button className="login__container__button" onClick={() => signUp()}>
+        {heading}
+      </button>
       {heading === "Sign Up" ? (
         <div className="login__container_privacy">
           <p className="login__container_privacy__content">
@@ -74,5 +126,13 @@ const Login = ({ pageStatus = "login" }) => {
     </div>
   );
 };
+
+export async function getServerSideProps() {
+  await dbConnect();
+
+  /* find all the data in our database */
+
+  return { props: {} };
+}
 
 export default Login;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,11 +8,19 @@ import Blob from "../public/blob.svg";
 import { GiFluffyWing } from "react-icons/gi";
 
 import dbConnect from "../lib/dbConnect";
-import Pet from "../models/Pet";
+// import Pet from "../models/Pet";
 
-export default function Home({ pets }) {
+export default function Home() {
   // console.log(pets);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const auth = localStorage.getItem("authorization");
+    if (auth) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
   return (
     <div>
       <Head>
@@ -114,16 +122,11 @@ export default function Home({ pets }) {
 }
 
 /* Retrieves pet(s) data from mongodb database */
+
 export async function getServerSideProps() {
   await dbConnect();
 
   /* find all the data in our database */
-  const result = await Pet.find({});
-  const pets = result.map((doc) => {
-    const pet = doc.toObject();
-    pet._id = pet._id.toString();
-    return pet;
-  });
 
-  return { props: { pets: pets } };
+  return { props: {} };
 }
