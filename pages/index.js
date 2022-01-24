@@ -11,7 +11,7 @@ import dbConnect from "../lib/dbConnect";
 import Pet from "../models/Pet";
 
 export default function Home({ pets }) {
-  console.log(pets);
+  // console.log(pets);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
     <div>
