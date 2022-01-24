@@ -20,7 +20,7 @@ const Login = ({ pageStatus = "login" }) => {
   };
 
   const signUp = () => {
-    fetch("http://localhost:3000/api/user", {
+    fetch("/api/user", {
       method: "POST", // *GET, POST, PUT, DELETE, etc.
       mode: "cors", // no-cors, *cors, same-origin
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
