@@ -2,10 +2,15 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { FaTwitter } from "react-icons/fa";
 import { AiOutlineGoogle } from "react-icons/ai";
-
+import { signUpAction } from "../../../Redux/action/auth";
+import { connect } from "react-redux";
 import dbConnect from "../../../lib/dbConnect";
-const Login = ({ pageStatus = "login" }) => {
+import { useRouter } from "next/router";
+const Login = ({ pageStatus, signUpAction, auth, is_logged_in }) => {
+  console.log(pageStatus);
   const [heading, setHeading] = useState("Sign Up");
+
+  const router = useRouter();
 
   const [data, setData] = useState({
     name: "",
@@ -19,29 +24,17 @@ const Login = ({ pageStatus = "login" }) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
-  const signUp = () => {
-    fetch("/api/user", {
-      method: "POST", // *GET, POST, PUT, DELETE, etc.
-      mode: "cors", // no-cors, *cors, same-origin
-      cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-      headers: {
-        "Content-Type": "application/json",
-        // 'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      redirect: "follow", // manual, *follow, error
-      referrerPolicy: "no-referrer", // no-referrer, *no-referrer-when-downgrade, origin, origin-when-cross-origin, same-origin, strict-origin, strict-origin-when-cross-origin, unsafe-url
-      body: JSON.stringify(data), // body data type must match "Content-Type" header
-    })
-      .then((res) => res.json())
-      .then((res) => {
-        localStorage.setItem("authorization", res.token);
-
-        setData({
-          name: "",
-          email: "",
-          password: "",
-        });
-      });
+  const signUp = async () => {
+    await signUpAction(name, email, password);
+    console.log(is_logged_in);
+    if (is_logged_in) {
+      router.reload();
+    }
+    setData({
+      name: "",
+      email: "",
+      password: "",
+    });
   };
   return (
     <div className="login__container">
@@ -135,4 +128,11 @@ export async function getServerSideProps() {
   return { props: {} };
 }
 
-export default Login;
+const mapStateToProps = (state) => ({
+  pageStatus: state.AuthReducer.pageStatus,
+  is_logged_in: state.AuthReducer.is_logged_in,
+});
+
+export default connect(mapStateToProps, {
+  signUpAction,
+})(Login);

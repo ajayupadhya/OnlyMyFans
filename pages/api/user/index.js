@@ -51,7 +51,7 @@ export default async function handler(req, res) {
 
         user.password = undefined;
 
-        res.status(201).json({ success: true, data: user, token: token });
+        res.status(201).json({ success: true, results: user, token: token });
       } catch (error) {
         res.status(400).json({ success: false, error: "Post Not working" });
       }

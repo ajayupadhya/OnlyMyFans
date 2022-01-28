@@ -6,20 +6,20 @@ import Login from "../src/User/signin_and_up/Login";
 import Base from "../src/Base/Base";
 import Blob from "../public/blob.svg";
 import { GiFluffyWing } from "react-icons/gi";
-
+import { connect } from "react-redux";
 import dbConnect from "../lib/dbConnect";
-// import Pet from "../models/Pet";
+import Home from "../src/Home/Home";
 
-export default function Home() {
-  // console.log(pets);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+const Index = ({ is_logged_in }) => {
+  const [login, setLogin] = useState(false);
 
   useEffect(() => {
-    const auth = localStorage.getItem("authorization");
-    if (auth) {
-      setIsLoggedIn(true);
+    if (localStorage.getItem("token")) {
+      setLogin(true);
     }
   }, []);
+
+  console.log(login);
 
   return (
     <div>
@@ -34,7 +34,8 @@ export default function Home() {
           rel="stylesheet"
         ></link>
       </Head>
-      {isLoggedIn ? (
+      <Home />
+      {login ? (
         <Base />
       ) : (
         <>
@@ -76,7 +77,7 @@ export default function Home() {
               </div> */}
             </div>
             <div className="w-1/2 h-[70rem]">
-              <Login />
+              <Login auth={(val) => setLogin(val)} />
             </div>
             <div></div>
           </main>
@@ -119,7 +120,7 @@ export default function Home() {
       )}
     </div>
   );
-}
+};
 
 /* Retrieves pet(s) data from mongodb database */
 
@@ -130,3 +131,9 @@ export async function getServerSideProps() {
 
   return { props: {} };
 }
+
+const mapStateToProps = (state) => ({
+  is_logged_in: state.AuthReducer.is_logged_in,
+});
+
+export default connect(mapStateToProps, {})(Index);
