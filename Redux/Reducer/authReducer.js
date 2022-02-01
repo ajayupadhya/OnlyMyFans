@@ -1,4 +1,4 @@
-import { SIGNUP, LOGIN, SIGNOUT } from "../constant";
+import { SIGNUP, LOGIN, SIGNOUT, LOCALCHECK } from "../constant";
 
 const authReducer = {
   is_logged_in: false,
@@ -15,6 +15,9 @@ const AuthReducer = (state = authReducer, action) => {
     }
 
     case SIGNOUT:
+      return authReducer;
+
+    case LOCALCHECK:
       return { ...state, is_logged_in: action.payload };
     default:
       return state;

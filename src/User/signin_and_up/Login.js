@@ -6,6 +6,7 @@ import { loginAction, signUpAction } from "../../../Redux/action/auth";
 import { connect } from "react-redux";
 import dbConnect from "../../../lib/dbConnect";
 import { useRouter } from "next/router";
+import { getUserData } from "../../../Redux/action/user";
 const Login = ({
   pageStatus,
   signUpAction,
@@ -13,6 +14,7 @@ const Login = ({
   is_logged_in,
   user,
   loginAction,
+  getUserData,
 }) => {
   console.log(pageStatus);
   const [heading, setHeading] = useState("Sign Up");
@@ -40,6 +42,7 @@ const Login = ({
     if (heading === "Sign In") {
       await loginAction(email, password);
     }
+    await getUserData();
   };
 
   // if (is_logged_in) {
@@ -150,4 +153,5 @@ const mapStateToProps = (state) => ({
 export default connect(mapStateToProps, {
   signUpAction,
   loginAction,
+  getUserData,
 })(Login);

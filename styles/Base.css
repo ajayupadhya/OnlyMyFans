@@ -122,26 +122,25 @@
 .btn__main_info_sign_out {
   display: flex;
   align-items: center;
-  height: 6.8rem;
+  height: 4.8rem;
+  border-radius: 1.3rem;
+  width: 21rem;
 
-  padding: 0.9rem 1.6rem;
-  /* margin-top: 25rem; */
-  position: fixed;
-  bottom: 1rem;
   cursor: pointer;
-
+  padding-left: 0.5rem;
   min-width: 7.8rem;
 }
 
 .btn__main_info_sign_out:hover {
-  background-color: #ffdc7b;
-  border-radius: 50px;
+  color: var(--primary-color);
+  background-color: var(--secondary-color);
+  opacity: 1;
 }
 
 .btn__main_info_sign_out > span {
   border-radius: 50%;
-  width: 4.5rem;
-  height: 4.5rem;
+  width: 4rem;
+  height: 4rem;
   display: flex;
   align-items: center;
   justify-content: center;

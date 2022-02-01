@@ -1,4 +1,4 @@
-import { SIGNUP, LOGIN, SIGNOUT } from "../constant";
+import { SIGNUP, LOGIN, SIGNOUT, LOCALCHECK } from "../constant";
 import secureStorage from "../../helper/secureStorage";
 import { AXIOS } from "../../helper/axiosHelper";
 
@@ -42,5 +42,13 @@ export const loginAction = (email, password) => async (dispatch) => {
 
 export const signOut = () => async (dispatch) => {
   secureStorage.removerItem("token");
-  dispatch({ type: SIGNOUT, payload: false });
+  dispatch({ type: SIGNOUT });
+};
+
+export const localAuthCheck = () => async (dispatch) => {
+  if (secureStorage.getItem("token")) {
+    dispatch({ type: LOCALCHECK, payload: true });
+  } else {
+    dispatch({ type: LOCALCHECK, payload: false });
+  }
 };

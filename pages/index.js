@@ -9,17 +9,19 @@ import { GiFluffyWing } from "react-icons/gi";
 import { connect } from "react-redux";
 import dbConnect from "../lib/dbConnect";
 import Home from "../src/Home/Home";
+import { localAuthCheck } from "../Redux/action/auth";
+import { getUserData } from "../Redux/action/user";
 
-const Index = ({ is_logged_in, user }) => {
+const Index = ({ is_logged_in, user_data, localAuthCheck, getUserData }) => {
   const [login, setLogin] = useState(false);
 
   useEffect(() => {
-    if (localStorage.getItem("token")) {
-      setLogin(true);
-    }
+    localAuthCheck();
+
+    getUserData();
   }, []);
 
-  console.log(is_logged_in, user, "index page");
+  console.log(is_logged_in, user_data, "index page");
   return (
     <div>
       <Head>
@@ -126,14 +128,12 @@ const Index = ({ is_logged_in, user }) => {
 export async function getServerSideProps() {
   await dbConnect();
 
-  /* find all the data in our database */
-
   return { props: {} };
 }
 
 const mapStateToProps = (state) => ({
   is_logged_in: state.AuthReducer.is_logged_in,
-  user: state.AuthReducer.user,
+  user_data: state.UserReducer.user_data,
 });
 
-export default connect(mapStateToProps, {})(Index);
+export default connect(mapStateToProps, { localAuthCheck, getUserData })(Index);
