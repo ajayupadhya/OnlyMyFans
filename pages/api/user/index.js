@@ -26,8 +26,6 @@ export default async function handler(req, res) {
 
         const checkEmail = await User.findOne({ email });
 
-        console.log(checkEmail);
-
         if (checkEmail) {
           return res.status(400).json({ error: "User Already Exist" });
         }

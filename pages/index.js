@@ -10,7 +10,7 @@ import { connect } from "react-redux";
 import dbConnect from "../lib/dbConnect";
 import Home from "../src/Home/Home";
 
-const Index = ({ is_logged_in }) => {
+const Index = ({ is_logged_in, user }) => {
   const [login, setLogin] = useState(false);
 
   useEffect(() => {
@@ -19,8 +19,7 @@ const Index = ({ is_logged_in }) => {
     }
   }, []);
 
-  console.log(login);
-
+  console.log(is_logged_in, user, "index page");
   return (
     <div>
       <Head>
@@ -35,7 +34,7 @@ const Index = ({ is_logged_in }) => {
         ></link>
       </Head>
       <Home />
-      {login ? (
+      {is_logged_in ? (
         <Base />
       ) : (
         <>
@@ -134,6 +133,7 @@ export async function getServerSideProps() {
 
 const mapStateToProps = (state) => ({
   is_logged_in: state.AuthReducer.is_logged_in,
+  user: state.AuthReducer.user,
 });
 
 export default connect(mapStateToProps, {})(Index);

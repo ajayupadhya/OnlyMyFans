@@ -2,11 +2,18 @@ import Link from "next/link";
 import React, { useState } from "react";
 import { FaTwitter } from "react-icons/fa";
 import { AiOutlineGoogle } from "react-icons/ai";
-import { signUpAction } from "../../../Redux/action/auth";
+import { loginAction, signUpAction } from "../../../Redux/action/auth";
 import { connect } from "react-redux";
 import dbConnect from "../../../lib/dbConnect";
 import { useRouter } from "next/router";
-const Login = ({ pageStatus, signUpAction, auth, is_logged_in }) => {
+const Login = ({
+  pageStatus,
+  signUpAction,
+  auth,
+  is_logged_in,
+  user,
+  loginAction,
+}) => {
   console.log(pageStatus);
   const [heading, setHeading] = useState("Sign Up");
 
@@ -24,18 +31,24 @@ const Login = ({ pageStatus, signUpAction, auth, is_logged_in }) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
+  console.log(is_logged_in, user);
+
   const signUp = async () => {
-    await signUpAction(name, email, password);
-    console.log(is_logged_in);
-    if (is_logged_in) {
-      router.reload();
+    if (heading === "Sign Up") {
+      await signUpAction(name, email, password);
     }
-    setData({
-      name: "",
-      email: "",
-      password: "",
-    });
+    if (heading === "Sign In") {
+      await loginAction(email, password);
+    }
   };
+
+  // if (is_logged_in) {
+  //   setData({
+  //     name: "",
+  //     email: "",
+  //     password: "",
+  //   });
+  // }
   return (
     <div className="login__container">
       <h4>{heading}</h4>
@@ -131,8 +144,10 @@ export async function getServerSideProps() {
 const mapStateToProps = (state) => ({
   pageStatus: state.AuthReducer.pageStatus,
   is_logged_in: state.AuthReducer.is_logged_in,
+  user: state.AuthReducer.user,
 });
 
 export default connect(mapStateToProps, {
   signUpAction,
+  loginAction,
 })(Login);
